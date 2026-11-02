@@ -20,6 +20,7 @@ const METHOD_TRAINING_CHOICES={
 const TRAINING_BANK=[
 ...COURSE.map(t=>({id:'core-'+t.id,topicId:t.id,question:t.question,options:t.options,correct:t.correct,steps:DETAILED_SOLUTIONS.practice[t.id],source:'Самопроверка темы '+studyLabel(t.id)})),
 ...LEGACY_TRAINING_BANK,
+...EXTRA_PRACTICE,
 {"question": "Если αₙ→0 и |bₙ|≤7, то αₙbₙ…", "options": ["Стремится к 0", "Равно 0", "Стремится к 7"], "correct": 0, "steps": [{"title": "Выделение нужного определения", "text": "Нужно доказать: для каждого ε>0 существует N, после которого |αₙbₙ|<ε."}, {"title": "Оценка произведения", "text": "Из |bₙ|≤7 получаем |αₙbₙ|=|αₙ||bₙ|≤7|αₙ|."}, {"title": "Подбор точности для малой", "text": "Так как αₙ→0, для точности ε/7 существует N с |αₙ|<ε/7 при n>N."}, {"title": "Подстановка", "text": "Для тех же n выполняется |αₙbₙ|≤7|αₙ|<7·ε/7=ε. Определение предела 0 выполнено."}, {"title": "Почему другие ответы неверны", "text": "Например, αₙ=1/n и bₙ=7 дают 7/n: произведение не равно нулю тождественно и не стремится к 7."}], "id": "legacy-small-3", "topicId": 12, "source": "Вопрос 12 · свойство 3: малая на ограниченную"},
 ...[38,39].flatMap(id=>METHOD_LESSONS[id].examples.map((ex,i)=>({id:'method-'+id+'-'+(i+1),topicId:id,question:METHOD_TRAINING_CHOICES[id][i][0],formula:id===38&&i===5?'':ex.formula,options:METHOD_TRAINING_CHOICES[id][i][1],correct:0,steps:ex.steps,source:ex.title})))
 ];
